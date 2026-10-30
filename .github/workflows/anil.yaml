@@ -14,8 +14,13 @@ jobs:
           cat /etc/os-release
           docker --version
           docker compose version
+          docker image ls
       - name: mystep2-clone the repo in current work directory
         uses: actions/checkout@v4
       - name: mystep3-Check the source code
         run: ls -al
+      - name: mystep4-We are going to build our own docker image
+        run: docker image build -t oklabs/myimage_oct30_2026:t1 -f Dockerfile .
+      - name: mystep5-Check the docker image
+        run: docker image ls
 
