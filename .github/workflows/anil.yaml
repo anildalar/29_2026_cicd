@@ -12,3 +12,7 @@ jobs:
           cd
           ls -al
           cat /etc/os-release
+      - name: mystep2-clone the repo in current work directory
+        uses: actions/checkout@v4
+      - name: mystep3-Check the source code
+        run: ls -al
